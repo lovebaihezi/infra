@@ -1,0 +1,3 @@
+packages:
+  - "apps/cross/liner/website"
+  - "apps/cross/liner/mobile"

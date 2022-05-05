@@ -1,0 +1,9 @@
+[submodule "cpp/third_party/googletest"]
+	path = cpp/third_party/googletest
+	url = git@github.com:google/googletest
+[submodule "cpp/third_party/glog"]
+	path = cpp/third_party/glog
+	url = git@github.com:google/glog
+[submodule "cpp/third_party/range-v3"]
+	path = cpp/third_party/range-v3
+	url = https://github.com/ericniebler/range-v3

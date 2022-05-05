@@ -1,0 +1,11 @@
+[workspace]
+members = [
+  "core",
+  "apps/cross/liner/desktop",
+  "apps/cross/liner/core",
+  "apps/cross/liner/tui",
+  "apps/cross/liner/core-wasm",
+  "service/apps-service/api/database",
+  "service/apps-service/api/graphql",
+]
+resolver = "2"
