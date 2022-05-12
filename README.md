@@ -66,4 +66,16 @@ oauth2, Deep Learning, protobuf,
 
 ## data analyze with Deep Learning
 
-Tensorflow + CUDA
+mlpack, tensorflow, 
+
+## Thanks to:
+@article{ensmallen_JMLR_2021,
+author  = {Ryan R. Curtin and Marcus Edel and Rahul Ganesh Prabhu and Suryoday Basak and Zhihao Lou and Conrad Sanderson},
+title   = {The ensmallen library for flexible numerical optimization},
+journal = {Journal of Machine Learning Research},
+year    = {2021},
+volume  = {22},
+number  = {166},
+pages   = {1--6},
+url     = {http://jmlr.org/papers/v22/20-416.html}
+}

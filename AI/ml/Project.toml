@@ -1,0 +1,8 @@
+name = "julia"
+uuid = "b67db23f-6195-4f78-abd2-b175894282f0"
+authors = ["lovebaihezi <x18739168862@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+Flux = "587475ba-b771-5e3f-ad9e-33799f191a9c"
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"

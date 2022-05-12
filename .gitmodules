@@ -6,4 +6,28 @@
 	url = git@github.com:google/glog
 [submodule "cpp/third_party/range-v3"]
 	path = cpp/third_party/range-v3
-	url = https://github.com/ericniebler/range-v3
+	url = git@github.com:ericniebler/range-v3
+[submodule "cpp/third_party/fmt"]
+	path = cpp/third_party/fmt
+	url = git@github.com:fmtlib/fmt
+[submodule "cpp/third_party/matplotplusplus"]
+	path = cpp/third_party/matplotplusplus
+	url = git@github.com:alandefreitas/matplotplusplus
+[submodule "cpp/third_party/mlpack"]
+	path = cpp/third_party/mlpack
+	url = git@github.com:mlpack/mlpack
+[submodule "cpp/third_party/cereal"]
+	path = cpp/third_party/cereal
+	url = git@github.com:USCiLab/cereal
+[submodule "cpp/third_party/OpenBLAS"]
+	path = cpp/third_party/OpenBLAS
+	url = git@github.com:xianyi/OpenBLAS
+[submodule "cpp/third_party/armadillo-code"]
+	path = cpp/third_party/armadillo
+	url = git@gitlab.com:conradsnicta/armadillo-code/
+[submodule "ensmallen"]
+	path = cpp/third_party/ensmallen
+	url = git@github.com:mlpack/ensmallen
+[submodule "cpp/third_party/dcmtk"]
+	path = cpp/third_party/dcmtk
+	url = git@github.com:dcmtk/dcmtk
