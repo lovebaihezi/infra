@@ -35,7 +35,7 @@ find_package(Boost REQUIRED context)
 
 find_package(PkgConfig REQUIRED)
 pkg_search_module(GRPC REQUIRED grpc)
-pkg_search_module(GRPCPP REQUIRED grpc++>=1.45.0)
+pkg_search_module(GRPCPP REQUIRED grpc++>=1.44.0)
 
 add_subdirectory(cpp/third_party/glog)
 add_subdirectory(cpp/third_party/googletest)
