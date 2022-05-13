@@ -24,7 +24,7 @@
 	url = git@github.com:xianyi/OpenBLAS
 [submodule "cpp/third_party/armadillo-code"]
 	path = cpp/third_party/armadillo
-	url = git@gitlab.com:conradsnicta/armadillo-code/
+	url = https://gitlab.com/conradsnicta/armadillo-code/
 [submodule "ensmallen"]
 	path = cpp/third_party/ensmallen
 	url = git@github.com:mlpack/ensmallen
