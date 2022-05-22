@@ -15,6 +15,7 @@
 #include <functional>
 #include <iostream>
 #include <map>
+#include <memory>
 #include <optional>
 #include <set>
 #include <span>
@@ -26,5 +27,4 @@
 #include <unordered_set>
 #include <variant>
 #include <vector>
-#include <memory>
 #endif

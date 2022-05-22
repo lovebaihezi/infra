@@ -1,4 +1,4 @@
-#include "src/infra_core.hpp"
+#include "infra_core.hpp"
 #include "gtest/gtest.h"
 TEST(StdVariant, BasicUseage) {
     auto sum_type = std::variant<int, char>(char{0});
