@@ -27,4 +27,18 @@
 #include <unordered_set>
 #include <variant>
 #include <vector>
+#include <complex>
+#include <compare>
+#include <any>
+#include <chrono>
+#include <typeinfo>
+#include <type_traits>
+#include <typeindex>
+#include <concepts>
+#include <atomic>
+#include <mutex>
+#include <bitset>
+#include <bit>
+#include <future>
+#include <exception>
 #endif

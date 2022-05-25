@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "liner-web",
+  "author": {
+    "name": "lovebaihezi<lqxclqxc@outlook.com>"
+  },
+  "version": "0.1.0",
+  "description": "liner application web version",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "deploy": "echo undone!"
+  }
+}

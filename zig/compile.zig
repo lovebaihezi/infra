@@ -24,6 +24,7 @@ pub const ProtocArgs = struct {
     /// --pyi_out=OUT_DIR         0b0010000000  Generate python pyi stub.
     /// --python_out=OUT_DIR      0b0100000000  Generate Python source file.
     /// --ruby_out=OUT_DIR        0b1000000000  Generate Ruby source file.
+    /// will generate all be default
     option: u16 = 0b1111111111,
 };
 

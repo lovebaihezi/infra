@@ -26,10 +26,7 @@ impl Application for App {
     }
 
     #[instrument]
-    fn update(
-        &mut self,
-        message: Self::Message,
-    ) -> iced::Command<Self::Message> {
+    fn update(&mut self, message: Self::Message) -> iced::Command<Self::Message> {
         Command::none()
     }
 
@@ -38,7 +35,13 @@ impl Application for App {
         Column::new()
             .push(
                 Row::new()
-                    .push(Text::new("center")),
+                    .width(iced::Length::Shrink)
+                    .align_items(iced::Alignment::Center)
+                    .push(
+                        Text::new("center")
+                            // .width(iced::Length::Fill)
+                            // .horizontal_alignment(iced::alignment::Horizontal::Center),
+                    ),
             )
             .into()
     }
