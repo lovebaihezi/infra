@@ -14,16 +14,16 @@ pub const ProtocError = error{
 pub const ProtocArgs = struct {
     include_path: []const u8,
     output_dir: []const u8,
-    /// --cpp_out=OUT_DIR         0b0000000001  Generate C++ header and source.
-    /// --csharp_out=OUT_DIR      0b0000000010  Generate C# source file.
-    /// --java_out=OUT_DIR        0b0000000100  Generate Java source file.
-    /// --js_out=OUT_DIR          0b0000001000  Generate JavaScript source.
-    /// --kotlin_out=OUT_DIR      0b0000010000  Generate Kotlin file.
-    /// --objc_out=OUT_DIR        0b0000100000  Generate Objective-C header and source.
-    /// --php_out=OUT_DIR         0b0001000000  Generate PHP source file.
-    /// --pyi_out=OUT_DIR         0b0010000000  Generate python pyi stub.
-    /// --python_out=OUT_DIR      0b0100000000  Generate Python source file.
-    /// --ruby_out=OUT_DIR        0b1000000000  Generate Ruby source file.
+    /// --cpp_out=OUT_DIR         0b          1  Generate C++ header and source.
+    /// --csharp_out=OUT_DIR      0b         10  Generate C# source file.
+    /// --java_out=OUT_DIR        0b        100  Generate Java source file.
+    /// --js_out=OUT_DIR          0b       1000  Generate JavaScript source.
+    /// --kotlin_out=OUT_DIR      0b      10000  Generate Kotlin file.
+    /// --objc_out=OUT_DIR        0b     100000  Generate Objective-C header and source.
+    /// --php_out=OUT_DIR         0b    1000000  Generate PHP source file.
+    /// --pyi_out=OUT_DIR         0b   10000000  Generate python pyi stub.
+    /// --python_out=OUT_DIR      0b  100000000  Generate Python source file.
+    /// --ruby_out=OUT_DIR        0b 1000000000  Generate Ruby source file.
     /// will generate all be default
     option: u16 = 0b1111111111,
 };
@@ -86,7 +86,7 @@ test "generate protoc args" {
     }
 }
 
-test "bit" {
+test "bitset" {
     {
         var value: usize = 0b100_000_000_1;
         comptime var i: u6 = 0;
@@ -101,7 +101,6 @@ test "bit" {
         try std.testing.expect(count == 2);
     }
     {
-        // TODO: bitwise
         var value: usize = 0b100_010_100_1;
         comptime var i: u6 = 0;
         var count: usize = 0;
