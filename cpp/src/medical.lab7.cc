@@ -1,6 +1,16 @@
-#include "medical.lab7.h"
+#include "glog/logging.h"
+#include <infra_core.hpp>
+#include <opencv4/opencv2/opencv.hpp>
 
 constexpr uint32_t AVG_AMOUNT = UINT32_MAX / 255;
+
+namespace Medical {
+template <> auto avg(auto &&views) noexcept -> double;
+// template <> auto avgmax(auto &&views) noexcept -> size_t;
+auto w(const auto &probabilities, auto k) noexcept -> double;
+auto mu(const auto &probabilities, auto k) noexcept -> double;
+auto threshold(const cv::Mat &image) noexcept -> uchar;
+} // namespace Medical
 
 template <> auto Medical::avg(auto &&views) noexcept -> double {
     double sum = 0;

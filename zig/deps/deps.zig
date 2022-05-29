@@ -2,4 +2,4 @@ const infra = @import("infra");
 const std = @import("std");
 const util = infra.util;
 
-pub fn deps() !void {}
+pub fn install_deps() !void {}

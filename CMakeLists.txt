@@ -62,16 +62,15 @@ include(GoogleTest)
 add_executable(deepl cpp/src/deepl.main.cc)
 
 add_executable(deepl.test cpp/tests/deepl.test.cc)
-add_executable(medical.lab7.test cpp/tests/medical.lab7.test.cc)
+add_executable(medical.lab8 cpp/src/medical.lab8.cc)
 
 gtest_discover_tests(deepl.test)
-gtest_discover_tests(medical.lab7.test)
 
 add_custom_target(symbols_generation COMMAND li_symbol_generator ${CMAKE_CURRENT_SOURCE_DIR})
 
 # add_dependencies(deepl symbols_generation)
 
 target_link_libraries(deepl PUBLIC ${LINKS})
+target_link_libraries(medical.lab8 PUBLIC ${LINKS})
 
 target_link_libraries(deepl.test PUBLIC gtest_main gmock_main ${LINKS})
-target_link_libraries(medical.lab7.test PUBLIC gtest_main gmock_main ${LINKS})
