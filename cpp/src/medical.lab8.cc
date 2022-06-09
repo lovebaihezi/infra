@@ -19,9 +19,9 @@ auto main(int argc, char* args[]) -> int {
     try {
         auto result = kmeans(std::move(image), 4);
         assert(result.size() == 4);
-    } catch (Todo &e) {
+    } catch (Todo e) {
         LOG(FATAL) << "unimplement!";
-    } catch (Unreachable& code) {
+    } catch (Unreachable code) {
         LOG(FATAL) << "Unreachable code!";
     }
     return 0;

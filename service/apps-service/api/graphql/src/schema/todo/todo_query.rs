@@ -1,10 +1,11 @@
+use crate::tracing;
+use crate::tracing::instrument;
 use async_graphql::*;
 use database::{
     todo_rpc::{todo_service_client::TodoServiceClient, QueryResult, TodoQuery},
     RPC_CONNECT,
 };
 use tonic::Request;
-use tracing::instrument;
 
 #[derive(Debug)]
 pub struct QueryTodo;

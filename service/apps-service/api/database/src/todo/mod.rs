@@ -5,11 +5,12 @@ use crate::todo_rpc::todo_service_server;
 use crate::todo_rpc::Todo;
 use crate::PgPool;
 use crate::{todo_rpc, FORMAT};
-use chrono::NaiveDateTime;
-use chrono::{DateTime, Utc};
+use infra_utils::chrono::NaiveDateTime;
+use infra_utils::chrono::{DateTime, Utc};
 use sqlx::types::Uuid;
 use tonic::{Code, Request, Response, Status};
-use tracing::instrument;
+use infra_utils::tracing::instrument;
+use infra_utils::tracing;
 
 type TimeStamp = DateTime<Utc>;
 

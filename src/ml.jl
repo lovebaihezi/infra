@@ -1,11 +1,11 @@
 module ml
 
-import Flux
+# import Flux
 import Random
 import Statistics
 import Images
 
-function distance(from::Vector{T}, to::Vector{V}) where {T,V}
+function distance(from::Vector{T}, to::Vector{T}) where {T}
     sum((from .- to) .^2) |> sqrt
 end
 
@@ -29,17 +29,27 @@ function KMEANS(
     C
 end
 
-main() = begin
+function indexes(index::Int64, width::Int64)::Vector{Int64}
+    vcat(
+        index - width * 2 - 2:index - width * 2 + 2,
+        index - width * 1 - 2:index - width * 1 + 2,
+        index - 2:index + 2,
+        index + width * 1 - 2:index + width * 1 + 2,
+        index + width * 2 - 2:index + width * 1 + 2,
+    )
+end
+
+function main()
     K = 4
     image = Images.Gray.(Images.load("/home/lqxc/Lab/Medical/dicom.png"))
     arr = Images.colorview(Images.Gray, image)
     width, height = Images.width(image), Images.height(image)
-    for y ∈ 1:10
-        for x ∈ y * width:(y + 1) * width
-            print(x, " ")
+    rands::Vector{Int32} = Random.shuffle(Random.MersenneTwister(12345678), 1:length(arr))[1:K]
+    for y ∈ 0:height
+        for x ∈ y * width + 1:(y + 1) * width
         end
-        println()
     end
 end
 
 end # module
+

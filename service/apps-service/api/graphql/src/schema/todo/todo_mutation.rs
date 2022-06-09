@@ -4,9 +4,11 @@ use database::{
     todo_rpc::{DeleteQuery, TodoAdd},
     RPC_CONNECT,
 };
+
+use infra_utils::tracing;
+use infra_utils::tracing::instrument;
 use serde::{Deserialize, Serialize};
 use tonic::Request;
-use tracing::instrument;
 
 #[derive(Debug)]
 pub struct MutationTodo;

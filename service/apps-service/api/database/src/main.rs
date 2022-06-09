@@ -1,23 +1,10 @@
 use database::{todo::TodoService, todo_rpc, RPC_ADDRESS};
 use sqlx::postgres::PgPoolOptions;
 use tonic::transport::Server;
+use infra_utils::{tokio, anyhow, trace::Trace, tracing};
 #[tokio::main]
-async fn main() -> std::io::Result<()> {
-    #[cfg(debug_assertions)]
-    tracing_subscriber::fmt()
-        .with_max_level(tracing::Level::TRACE)
-        .pretty()
-        .init();
-
-    #[cfg(not(debug_assertions))]
-    tracing_subscriber::fmt()
-        .with_max_level(tracing::Level::WARN)
-        .init();
-
-    #[cfg(not(debug_assertions))]
-    let (_, guard) =
-        tracing_appender::non_blocking(tracing_appender::rolling::never("log", "todo.rpc.log"));
-
+async fn main() -> anyhow::Result<()> {
+    let _trace = Trace::init();
     let pool = PgPoolOptions::new()
         .connect(env!("POSTGRES_POOL_URL"))
         .await

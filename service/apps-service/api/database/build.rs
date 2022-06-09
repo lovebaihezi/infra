@@ -1,7 +1,7 @@
 use std::{collections::VecDeque, path::PathBuf};
 
-use tokio::fs::{read_dir, ReadDir};
-
+use infra_utils::tokio::fs::{read_dir, ReadDir};
+use infra_utils::tokio;
 async fn find_all(proto_dir: ReadDir) -> std::io::Result<Vec<PathBuf>> {
     let mut queue = VecDeque::with_capacity(512);
     let mut proto_paths = Vec::with_capacity(512);
@@ -27,7 +27,7 @@ async fn find_all(proto_dir: ReadDir) -> std::io::Result<Vec<PathBuf>> {
 }
 
 #[tokio::main]
-async fn main() -> std::io::Result<()> {
+async fn main() -> infra_utils::anyhow::Result<()> {
     let attribute = r#"
 #[derive(sqlx::FromRow, serde::Serialize, serde::Deserialize, async_graphql::InputObject)]
 #[serde(rename_all = "camelCase")]"#;

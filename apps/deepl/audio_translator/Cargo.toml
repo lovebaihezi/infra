@@ -1,0 +1,11 @@
+[package]
+name = "audio_tranlator"
+version = "0.0.1"
+authors = ["bowen@lqxclqxc@outlook.com"]
+edition = "2021"
+
+[dependencies]
+infra_utils = {path = "../../../utils"}
+csv = "1.1"
+linfa = "0.5"
+tensorflow = "0.18"

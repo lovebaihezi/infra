@@ -38,9 +38,8 @@ impl Application for App {
                     .width(iced::Length::Shrink)
                     .align_items(iced::Alignment::Center)
                     .push(
-                        Text::new("center")
-                            // .width(iced::Length::Fill)
-                            // .horizontal_alignment(iced::alignment::Horizontal::Center),
+                        Text::new("center"), // .width(iced::Length::Fill)
+                                             // .horizontal_alignment(iced::alignment::Horizontal::Center),
                     ),
             )
             .into()
