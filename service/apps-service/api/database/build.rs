@@ -1,7 +1,7 @@
 use std::{collections::VecDeque, path::PathBuf};
 
-use infra_utils::tokio::fs::{read_dir, ReadDir};
 use infra_utils::tokio;
+use infra_utils::tokio::fs::{read_dir, ReadDir};
 async fn find_all(proto_dir: ReadDir) -> std::io::Result<Vec<PathBuf>> {
     let mut queue = VecDeque::with_capacity(512);
     let mut proto_paths = Vec::with_capacity(512);

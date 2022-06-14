@@ -53,7 +53,7 @@ add_subdirectory(cpp/third_party/fmt)
 #add_subdirectory(cpp/third_party/matplotplusplus)
 #add_subdirectory(cpp/third_party/dcmtk)
 
-set(LINKS glog::glog fmt ${OpenCV_LIBS} ${CURL_LIBRARIES} ${Boost_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} ${PostgreSQL_LIBRARIES} ${OPENSSL_LIBRARIES})
+set(LINKS armadillo glog::glog fmt ${OpenCV_LIBS} ${CURL_LIBRARIES} ${Boost_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} ${PostgreSQL_LIBRARIES} ${OPENSSL_LIBRARIES})
 
 enable_testing()
 
@@ -63,6 +63,7 @@ add_executable(deepl cpp/src/deepl.main.cc)
 
 add_executable(deepl.test cpp/tests/deepl.test.cc)
 add_executable(medical.lab8 cpp/src/medical.lab8.cc)
+add_executable(deepl-CNN cpp/bins/deepl-CNN.cc)
 
 gtest_discover_tests(deepl.test)
 
@@ -72,5 +73,4 @@ add_custom_target(symbols_generation COMMAND li_symbol_generator ${CMAKE_CURRENT
 
 target_link_libraries(deepl PUBLIC ${LINKS})
 target_link_libraries(medical.lab8 PUBLIC ${LINKS})
-
 target_link_libraries(deepl.test PUBLIC gtest_main gmock_main ${LINKS})

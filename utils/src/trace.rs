@@ -14,18 +14,29 @@ pub struct Trace {
 impl Trace {
     #[cfg(debug_assertions)]
     pub fn init() -> Self {
-        tracing_subscriber::fmt()
-            .with_max_level(tracing::Level::DEBUG)
-            .pretty()
-            .init();
+        Self::debug_console();
         Self {}
     }
 
     #[cfg(not(debug_assertions))]
     pub fn init() -> Self {
+        Self::release_init()
+    }
+
+    /// ## Debug Console fn
+    /// use tracing_subscriber to log logs which level greater or equal to DEBUG with pretty
+    /// enabled
+    pub fn debug_console() {
+        tracing_subscriber::fmt()
+            .with_max_level(tracing::Level::DEBUG)
+            .pretty()
+            .init();
+    }
+
+    #[cfg(not(debug_assertions))]
+    pub fn release_init() -> Self {
         let (blocking, guard) =
             tracing_appender::non_blocking(tracing_appender::rolling::never("log", "todo.log"));
-        #[cfg(not(debug_assertions))]
         tracing_subscriber::fmt()
             .with_max_level(tracing::Level::WARN)
             .init();

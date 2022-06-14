@@ -5,7 +5,7 @@ members = [
   "apps/cross/liner/core",
   "apps/cross/liner/tui",
   "apps/cross/liner/core-wasm",
-  "apps/deepl/audio_translator",
+  "apps/deepl/*",
   "service/apps-service/api/database",
   "service/apps-service/api/graphql",
 ]

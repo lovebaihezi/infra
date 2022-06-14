@@ -41,4 +41,5 @@
 #include <bit>
 #include <future>
 #include <exception>
+#include "glog/logging.h"
 #endif

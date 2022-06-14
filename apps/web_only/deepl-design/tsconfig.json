@@ -15,9 +15,9 @@
         "isolatedModules": true,
         "noEmit": true,
         "jsx": "react-jsx",
-        "plugins": {
+        "plugins": [{
             "name": "typescript-styled-plugin"
-        }
+        }]
     },
     "include": ["src"],
     "references": [{ "path": "./tsconfig.node.json" }]

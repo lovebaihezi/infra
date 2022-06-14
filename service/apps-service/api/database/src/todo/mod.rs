@@ -7,10 +7,10 @@ use crate::PgPool;
 use crate::{todo_rpc, FORMAT};
 use infra_utils::chrono::NaiveDateTime;
 use infra_utils::chrono::{DateTime, Utc};
+use infra_utils::tracing;
+use infra_utils::tracing::instrument;
 use sqlx::types::Uuid;
 use tonic::{Code, Request, Response, Status};
-use infra_utils::tracing::instrument;
-use infra_utils::tracing;
 
 type TimeStamp = DateTime<Utc>;
 

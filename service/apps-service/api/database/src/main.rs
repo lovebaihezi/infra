@@ -1,7 +1,7 @@
 use database::{todo::TodoService, todo_rpc, RPC_ADDRESS};
+use infra_utils::{anyhow, tokio, trace::Trace, tracing};
 use sqlx::postgres::PgPoolOptions;
 use tonic::transport::Server;
-use infra_utils::{tokio, anyhow, trace::Trace, tracing};
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     let _trace = Trace::init();
